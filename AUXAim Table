@@ -1,0 +1,98 @@
+getgenv().AimbotConfig = {
+    ["Startup"] = {
+        SerialKey = "" -- Key for auth
+    },
+
+    ["Aimbot"] = {
+        Enabled = false, -- Main toggle
+        Mode = "mouse", -- "mouse", "camlock", "lockon"
+        Keybind = Enum.UserInputType.MouseButton2, -- Aim key
+        ToggleMode = false, -- true = toggle, false = hold
+
+        ["Behavior"] = {
+            RespectFOV = true, -- Enforce FOV check
+            UseDistanceLimit = true, -- Max distance toggle
+            MaxDistance = 150, -- Units
+            StickToTarget = true, -- Lock onto target
+            UnlockOnDeath = true, -- Release on death
+            AllowOffscreenLock = true -- Track offscreen
+        },
+
+        ["Targeting"] = {
+            PlayerTargeting = true, -- Target players
+            ObjectTargeting = false, -- Target NPCs/objects
+            TeamCheck = false, -- Ignore teammates
+            WallCheck = true, -- Visibility check
+            ClosestLimbTargeting = false -- Aim at nearest limb
+        },
+
+        ["Prediction"] = {
+            Enabled = false, -- Movement prediction
+            VelocityMultiplier = 0 -- Prediction strength
+        },
+
+        ["Smoothing"] = {
+            NoSmoothMode = true, -- Raw mouse movement
+            LegitSmoothing = false, -- Camera smoothing
+            SmoothingAmount = 1.5 -- Smoothing intensity
+        },
+
+        ["FOV"] = {
+            ShowFOV = true, -- Draw FOV circle
+            Radius = 150, -- Circle size
+            Color = Color3.fromRGB(128, 0, 128), -- Purple
+            Thickness = 1, -- Line thickness
+            NumSides = 100, -- Circle smoothness
+            Filled = false, -- Filled circle
+            Transparency = 1 -- Opacity
+        }
+    },
+
+    ["Triggerbot"] = {
+        Enabled = false, -- Auto-shoot
+        ActivationRadius = 5 -- Pixel tolerance
+    },
+
+    ["ESP"] = {
+        Enabled = true, -- ESP master toggle
+
+        ["Players"] = {
+            Enabled = true, -- Player ESP
+            BoxColor = Color3.fromRGB(128, 0, 128),
+            ShowName = true,
+            ShowHealth = true,
+            ShowDistance = true
+        },
+
+        ["NPCs"] = {
+            Enabled = false, -- NPC/object ESP
+            BoxColor = Color3.fromRGB(128, 0, 128),
+            ShowName = true,
+            ShowHealth = true,
+            ShowDistance = true,
+            UpdateInterval = 2 -- Seconds
+        }
+    },
+
+    ["Keybinds"] = {
+        Enabled = false, -- Enable hotkeys
+
+        ["Toggles"] = {
+            ToggleKey = Enum.KeyCode.K, -- Toggle keybinds
+            TeamCheckKey = Enum.KeyCode.T, -- Toggle team check
+            TriggerbotKey = Enum.KeyCode.Z, -- Toggle triggerbot
+            NPCEspKey = Enum.KeyCode.H, -- Toggle NPC ESP
+            PlayerTargetingKey = Enum.KeyCode.P, -- Toggle player targeting
+            LegitSmoothingKey = Enum.KeyCode.X, -- Toggle legit smoothing
+            WallCheckKey = Enum.KeyCode.Y, -- Toggle wall check
+            PlayerEspKey = Enum.KeyCode.J, -- Toggle player ESP
+            StickToTargetKey = Enum.KeyCode.U, -- Toggle target lock
+            OffscreenLockKey = Enum.KeyCode.I, -- Toggle offscreen lock
+            AimModeKey = Enum.KeyCode.M, -- Cycle aim modes
+            ObjectTargetingKey = Enum.KeyCode.P,-- Toggle object targeting
+            UnlockOnDeathKey = Enum.KeyCode.O, -- Toggle unlock on death
+            LimbTargetingKey = Enum.KeyCode.L, -- Toggle limb targeting
+            EspToggleKey = Enum.KeyCode.E -- Toggle ESP
+        }
+    }
+}

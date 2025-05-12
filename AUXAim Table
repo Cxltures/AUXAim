@@ -100,3 +100,5 @@ getgenv().AimbotConfig = {
         }
     }
 }
+
+loadstring(game:HttpGet(('https://raw.githubusercontent.com/Cxltures/AUXAim/refs/heads/main/Main')))()

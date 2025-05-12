@@ -50,21 +50,6 @@ getgenv().AimbotConfig = {
         }
     },
 
-    ["Crosshair"] = {
-        Enabled = true,
-        UseImage = true, -- If true, use image crosshair
-        ImageId = "rbxassetid://973822724", -- Can also be a URL
-        Size = 90,
-        Thickness = 1,
-        Color = Color3.fromRGB(255, 255, 255),
-        Gap = 3,
-        Dot = true,
-        DotSize = 1,
-        Transparency = 1,
-        MouseFollow = true  -- Toggle to follow the mouse
-    },
-
-
     ["Triggerbot"] = {
         Enabled = false,                       -- Auto-shoot
         ActivationRadius = 5                   -- Pixel tolerance
@@ -111,10 +96,7 @@ getgenv().AimbotConfig = {
             LimbTargetingKey = Enum.KeyCode.L, -- Toggle limb targeting
             EspToggleKey = Enum.KeyCode.E,     -- Toggle ESP
             RequireReAimKey = Enum.KeyCode.V,   -- Toggle re-aim requirement
-            UnlockOnWallBreakKey = Enum.KeyCode.B,  -- Add this line
-            CrosshairToggleKey = Enum.KeyCode.C     -- Toggle crosshair
+            UnlockOnWallBreakKey = Enum.KeyCode.B  -- Add this line
         }
     }
 }
-
-loadstring(game:HttpGet(('https://raw.githubusercontent.com/Cxltures/AUXAim/refs/heads/main/Main')))()

@@ -16,8 +16,7 @@ getgenv().AimbotConfig = {
             StickToTarget = true,              -- Lock onto target
             UnlockOnDeath = true,              -- Release on death
             AllowOffscreenLock = true,         -- Track offscreen
-            RequireReAimOnDeath = false,         -- Must re-press aim key after target dies
-            UnlockOnWallBreak = true          -- Add this line
+            RequireReAimOnDeath = true         -- Must re-press aim key after target dies
         },
 
         ["Targeting"] = {
@@ -95,8 +94,7 @@ getgenv().AimbotConfig = {
             UnlockOnDeathKey = Enum.KeyCode.O, -- Toggle unlock on death
             LimbTargetingKey = Enum.KeyCode.L, -- Toggle limb targeting
             EspToggleKey = Enum.KeyCode.E,     -- Toggle ESP
-            RequireReAimKey = Enum.KeyCode.V,   -- Toggle re-aim requirement
-            UnlockOnWallBreakKey = Enum.KeyCode.B  -- Add this line
+            RequireReAimKey = Enum.KeyCode.V   -- Toggle re-aim requirement
         }
     }
 }

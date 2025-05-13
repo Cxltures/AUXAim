@@ -16,7 +16,7 @@ getgenv().AimbotConfig = {
             StickToTarget = true,              -- Lock onto target
             UnlockOnDeath = true,              -- Release on death
             AllowOffscreenLock = true,         -- Track offscreen
-            RequireReAimOnDeath = true         -- Must re-press aim key after target dies
+            RequireReAimOnDeath = false        -- Must re-press aim key after target dies
         },
 
         ["Targeting"] = {
@@ -48,6 +48,21 @@ getgenv().AimbotConfig = {
             Transparency = 1                   -- Opacity
         }
     },
+
+    ["Crosshair"] = {
+        Enabled = true,
+        UseImage = true, -- If true, use image crosshair
+        ImageId = "rbxassetid://973822724", -- Can also be a URL
+        Size = 90,
+        Thickness = 1,
+        Color = Color3.fromRGB(255, 255, 255),
+        Gap = 3,
+        Dot = true,
+        DotSize = 1,
+        Transparency = 1,
+        MouseFollow = true  -- Toggle to follow the mouse
+    },
+
 
     ["Triggerbot"] = {
         Enabled = false,                       -- Auto-shoot
@@ -94,7 +109,8 @@ getgenv().AimbotConfig = {
             UnlockOnDeathKey = Enum.KeyCode.O, -- Toggle unlock on death
             LimbTargetingKey = Enum.KeyCode.L, -- Toggle limb targeting
             EspToggleKey = Enum.KeyCode.E,     -- Toggle ESP
-            RequireReAimKey = Enum.KeyCode.V   -- Toggle re-aim requirement
+            RequireReAimKey = Enum.KeyCode.V,   -- Toggle re-aim requirement
+            CrosshairToggleKey = Enum.KeyCode.C     -- Toggle crosshair
         }
     }
 }

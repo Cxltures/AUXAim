@@ -4,7 +4,7 @@ getgenv().AimbotConfig = {
     },
 
     ["Aimbot"] = {
-        Enabled = false,                        -- Main toggle
+        Enabled = false,                       -- Main toggle
         Mode = "mouse",                        -- "mouse", "camlock", "lockon"
         Keybind = Enum.UserInputType.MouseButton2, -- Aim key
         ToggleMode = false,                    -- true = toggle, false = hold
@@ -20,15 +20,15 @@ getgenv().AimbotConfig = {
         },
 
         ["Targeting"] = {
-            PlayerTargeting = false,           -- Target players
+            PlayerTargeting = true,           -- Target players
             ObjectTargeting = true,            -- Target NPCs/objects
             TeamCheck = false,                 -- Ignore teammates
-            WallCheck = true,                  -- Visibility check
-            ClosestLimbTargeting = false      -- Aim at nearest limb
+            WallCheck = false,                 -- Visibility check
+            ClosestLimbTargeting = false       -- Aim at nearest limb
         },
 
         ["Prediction"] = {
-            Enabled = false,                    -- Movement prediction
+            Enabled = false,                   -- Movement prediction
             VelocityMultiplier = 0             -- Prediction strength
         },
 
@@ -73,7 +73,7 @@ getgenv().AimbotConfig = {
         Enabled = true,                        -- ESP master toggle
 
         ["Players"] = {
-            Enabled = false,                   -- Player ESP
+            Enabled = true,                   -- Player ESP
             BoxColor = Color3.fromRGB(128, 0, 128),
             ShowName = true,
             ShowHealth = true,
@@ -109,10 +109,10 @@ getgenv().AimbotConfig = {
             UnlockOnDeathKey = Enum.KeyCode.O, -- Toggle unlock on death
             LimbTargetingKey = Enum.KeyCode.L, -- Toggle limb targeting
             EspToggleKey = Enum.KeyCode.E,     -- Toggle ESP
-            RequireReAimKey = Enum.KeyCode.V,   -- Toggle re-aim requirement
+            RequireReAimKey = Enum.KeyCode.V,  -- Toggle re-aim requirement
             CrosshairToggleKey = Enum.KeyCode.C     -- Toggle crosshair
         }
     }
 }
 
-loadstring(game:HttpGet(('https://raw.githubusercontent.com/Cxltures/AUXAim/refs/heads/main/Main?token=GHSAT0AAAAAADI2COQUIGXIGYBTGOUJAPTG2FZBRHA')))()
+loadstring(game:HttpGet(('https://github.com/Cxltures/AUXAim/raw/refs/heads/main/Main')))()

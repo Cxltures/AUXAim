@@ -1,58 +1,77 @@
 getgenv().AimbotConfig = {
     ["Startup"] = {
-        SerialKey = "" -- Key for auth
+        SerialKey = "Meatbed4444"
     },
 
     ["Aimbot"] = {
-        Enabled = false,                       -- Main toggle
-        Mode = "mouse",                        -- "mouse", "camlock", "lockon"
-        Keybind = Enum.UserInputType.MouseButton2, -- Aim key
-        ToggleMode = false,                    -- true = toggle, false = hold
+        Enabled = false,
+        Mode = "mouse",                        -- "mouse", "camlock", "lockon", "silent"
+        Keybind = Enum.UserInputType.MouseButton2,
+        ToggleMode = false,
 
         ["Behavior"] = {
-            RespectFOV = true,                 -- Enforce FOV check
-            UseDistanceLimit = true,           -- Max distance toggle
-            MaxDistance = 150,                 -- Units
-            StickToTarget = true,              -- Lock onto target
-            UnlockOnDeath = true,              -- Release on death
-            AllowOffscreenLock = true,         -- Track offscreen
-            RequireReAimOnDeath = false        -- Must re-press aim key after target dies
+            RespectFOV = true,
+            UseDistanceLimit = true,
+            MaxDistance = 150,
+            StickToTarget = true,
+            UnlockOnDeath = true,
+            AllowOffscreenLock = true,
+            RequireReAimOnDeath = false,
+            UnlockOnWallBreak = false,
+            Priority = "Nearest"               -- "Nearest", "Health"
         },
 
         ["Targeting"] = {
-            PlayerTargeting = true,           -- Target players
-            ObjectTargeting = true,            -- Target NPCs/objects
-            TeamCheck = false,                 -- Ignore teammates
-            WallCheck = false,                 -- Visibility check
-            ClosestLimbTargeting = false       -- Aim at nearest limb
+            PlayerTargeting = true,
+            ObjectTargeting = true,
+            TeamCheck = false,
+            WallCheck = true,
+            ClosestLimbTargeting = false,
+            IgnoreList = {},                   -- {"Part1", "Username"}
+            IgnoreTransparent = true
         },
 
         ["Prediction"] = {
-            Enabled = false,                   -- Movement prediction
-            VelocityMultiplier = 0             -- Prediction strength
+            Enabled = false,
+            VelocityMultiplier = 0,
+            PingCompensation = 0.05
         },
 
         ["Smoothing"] = {
-            NoSmoothMode = true,               -- Raw mouse movement
-            LegitSmoothing = false,            -- Camera smoothing
-            SmoothingAmount = 1.5              -- Smoothing intensity
+            NoSmoothMode = true,
+            LegitSmoothing = false,
+            SmoothingAmount = 1.5,
+            UseCurve = false                   -- Ease-in/out instead of linear
+        },
+
+        ["SilentAim"] = {
+            Enabled = false,
+            HitPart = "Head"                   -- Which part to snap Hit to
+        },
+
+        ["HitboxExpander"] = {
+            Enabled = false,
+            Size = 2.5,
+            Transparency = 0.7
         },
 
         ["FOV"] = {
-            ShowFOV = true,                    -- Draw FOV circle
-            Radius = 150,                      -- Circle size
-            Color = Color3.fromRGB(128, 0, 128), -- Purple
-            Thickness = 1,                     -- Line thickness
-            NumSides = 100,                    -- Circle smoothness
-            Filled = false,                    -- Filled circle
-            Transparency = 1                   -- Opacity
+            ShowFOV = true,
+            Radius = 150,
+            Color = Color3.fromRGB(128, 0, 128),
+            Thickness = 1,
+            NumSides = 100,
+            Filled = false,
+            Transparency = 1,
+            Dynamic = false,                   -- Grows while aiming
+            AimScale = 1.3
         }
     },
 
     ["Crosshair"] = {
         Enabled = true,
-        UseImage = true, -- If true, use image crosshair
-        ImageId = "rbxassetid://973822724", -- Can also be a URL
+        UseImage = true,
+        ImageId = "rbxassetid://973822724",
         Size = 90,
         Thickness = 1,
         Color = Color3.fromRGB(255, 255, 255),
@@ -60,57 +79,76 @@ getgenv().AimbotConfig = {
         Dot = true,
         DotSize = 1,
         Transparency = 1,
-        MouseFollow = true  -- Toggle to follow the mouse
+        MouseFollow = true
     },
 
-
     ["Triggerbot"] = {
-        Enabled = false,                       -- Auto-shoot
-        ActivationRadius = 5                   -- Pixel tolerance
+        Enabled = false,
+        ActivationRadius = 5,
+        Delay = 0
     },
 
     ["ESP"] = {
-        Enabled = true,                        -- ESP master toggle
+        Enabled = true,
 
         ["Players"] = {
-            Enabled = true,                   -- Player ESP
-            BoxColor = Color3.fromRGB(128, 0, 128),
-            ShowName = true,
-            ShowHealth = true,
-            ShowDistance = true
-        },
-
-        ["NPCs"] = {
-            Enabled = true,                    -- NPC/object ESP
+            Enabled = true,
             BoxColor = Color3.fromRGB(128, 0, 128),
             ShowName = true,
             ShowHealth = true,
             ShowDistance = true,
-            UpdateInterval = 2                -- Seconds
+            ShowSkeleton = false,
+            ShowTracer = false,
+            ShowChams = false,
+            CornerStyle = false,               -- Corner brackets instead of full box
+            HealthBar = true,                  -- Filled bar instead of text
+            Rainbow = false,
+            FadeWithDistance = true
+        },
+
+        ["NPCs"] = {
+            Enabled = true,
+            BoxColor = Color3.fromRGB(128, 0, 128),
+            ShowName = true,
+            ShowHealth = true,
+            ShowDistance = true,
+            ShowSkeleton = false,
+            ShowTracer = false,
+            ShowChams = false,
+            CornerStyle = false,
+            HealthBar = true,
+            Rainbow = false,
+            FadeWithDistance = true,
+            UpdateInterval = 2
         }
     },
 
     ["Keybinds"] = {
-        Enabled = false,                       -- Enable hotkeys
+        Enabled = false,
 
         ["Toggles"] = {
-            ToggleKey = Enum.KeyCode.K,        -- Toggle keybinds
-            TeamCheckKey = Enum.KeyCode.T,     -- Toggle team check
-            TriggerbotKey = Enum.KeyCode.Z,    -- Toggle triggerbot
-            NPCEspKey = Enum.KeyCode.H,        -- Toggle NPC ESP
-            PlayerTargetingKey = Enum.KeyCode.P,-- Toggle player targeting
-            LegitSmoothingKey = Enum.KeyCode.X,-- Toggle legit smoothing
-            WallCheckKey = Enum.KeyCode.Y,     -- Toggle wall check
-            PlayerEspKey = Enum.KeyCode.J,     -- Toggle player ESP
-            StickToTargetKey = Enum.KeyCode.U, -- Toggle target lock
-            OffscreenLockKey = Enum.KeyCode.I, -- Toggle offscreen lock
-            AimModeKey = Enum.KeyCode.M,       -- Cycle aim modes
-            ObjectTargetingKey = Enum.KeyCode.P,-- Toggle object targeting
-            UnlockOnDeathKey = Enum.KeyCode.O, -- Toggle unlock on death
-            LimbTargetingKey = Enum.KeyCode.L, -- Toggle limb targeting
-            EspToggleKey = Enum.KeyCode.E,     -- Toggle ESP
-            RequireReAimKey = Enum.KeyCode.V,  -- Toggle re-aim requirement
-            CrosshairToggleKey = Enum.KeyCode.C     -- Toggle crosshair
+            ToggleKey = Enum.KeyCode.K,
+            TeamCheckKey = Enum.KeyCode.T,
+            TriggerbotKey = Enum.KeyCode.Z,
+            NPCEspKey = Enum.KeyCode.H,
+            PlayerTargetingKey = Enum.KeyCode.P,
+            LegitSmoothingKey = Enum.KeyCode.X,
+            WallCheckKey = Enum.KeyCode.Y,
+            PlayerEspKey = Enum.KeyCode.J,
+            StickToTargetKey = Enum.KeyCode.U,
+            OffscreenLockKey = Enum.KeyCode.I,
+            AimModeKey = Enum.KeyCode.M,
+            ObjectTargetingKey = Enum.KeyCode.P,
+            UnlockOnDeathKey = Enum.KeyCode.O,
+            LimbTargetingKey = Enum.KeyCode.L,
+            EspToggleKey = Enum.KeyCode.E,
+            RequireReAimKey = Enum.KeyCode.V,
+            UnlockOnWallBreakKey = Enum.KeyCode.B,
+            CrosshairToggleKey = Enum.KeyCode.C,
+            SilentAimKey = Enum.KeyCode.N,
+            HitboxExpanderKey = Enum.KeyCode.F,
+            SkeletonKey = Enum.KeyCode.R,
+            ChamsKey = Enum.KeyCode.G
         }
     }
 }

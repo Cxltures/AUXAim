@@ -1,11 +1,11 @@
 getgenv().AimbotConfig = {
     ["Startup"] = {
-        SerialKey = "Meatbed4444"
+        SerialKey = ""
     },
 
     ["Aimbot"] = {
         Enabled = false,
-        Mode = "mouse",                        -- "mouse", "camlock", "lockon", "silent"
+        Mode = "mouse",
         Keybind = Enum.UserInputType.MouseButton2,
         ToggleMode = false,
 
@@ -17,17 +17,17 @@ getgenv().AimbotConfig = {
             UnlockOnDeath = true,
             AllowOffscreenLock = true,
             RequireReAimOnDeath = false,
-            UnlockOnWallBreak = false,
-            Priority = "Nearest"               -- "Nearest", "Health"
+            UnlockOnWallBreak = true,
+            Priority = "Nearest"
         },
 
         ["Targeting"] = {
             PlayerTargeting = true,
-            ObjectTargeting = true,
+            ObjectTargeting = false,
             TeamCheck = false,
             WallCheck = true,
             ClosestLimbTargeting = false,
-            IgnoreList = {},                   -- {"Part1", "Username"}
+            IgnoreList = {},
             IgnoreTransparent = true
         },
 
@@ -37,16 +37,19 @@ getgenv().AimbotConfig = {
             PingCompensation = 0.05
         },
 
+        -- Mode: "Default" = clamped MAX_STEP + dist*0.5 (original)
+        --       "NoSmoothing" = true instant snap, no clamp, no lerp
         ["Smoothing"] = {
-            NoSmoothMode = true,
-            LegitSmoothing = false,
+            Mode = "NoSmoothing",
+            SnapMethod = "mouse",
+            MaxStep = 120,
             SmoothingAmount = 1.5,
-            UseCurve = false                   -- Ease-in/out instead of linear
+            UseCurve = false
         },
 
         ["SilentAim"] = {
             Enabled = false,
-            HitPart = "Head"                   -- Which part to snap Hit to
+            HitPart = "Head"
         },
 
         ["HitboxExpander"] = {
@@ -63,7 +66,7 @@ getgenv().AimbotConfig = {
             NumSides = 100,
             Filled = false,
             Transparency = 1,
-            Dynamic = false,                   -- Grows while aiming
+            Dynamic = false,
             AimScale = 1.3
         }
     },
@@ -100,14 +103,14 @@ getgenv().AimbotConfig = {
             ShowSkeleton = false,
             ShowTracer = false,
             ShowChams = false,
-            CornerStyle = false,               -- Corner brackets instead of full box
-            HealthBar = true,                  -- Filled bar instead of text
+            CornerStyle = false,
+            HealthBar = true,
             Rainbow = false,
             FadeWithDistance = true
         },
 
         ["NPCs"] = {
-            Enabled = true,
+            Enabled = false,
             BoxColor = Color3.fromRGB(128, 0, 128),
             ShowName = true,
             ShowHealth = true,
